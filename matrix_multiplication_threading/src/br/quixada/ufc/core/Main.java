@@ -11,9 +11,9 @@ public class Main {
 		int matrix[][] = new int [size][size];
 		int matrixTwo[][] = new int [size][size];
 		int resultMatrix[][]= new int [size][size];
-		//serialVersion();
 		
-		pararrelVersion(size,matrix,matrixTwo,resultMatrix);
+		//pararrelVersion(size,matrix,matrixTwo,resultMatrix);
+		serialVersion(size,matrix,matrixTwo,resultMatrix);
 	
 	}
 	
@@ -45,15 +45,24 @@ public class Main {
 	}
 
 	private static void serialVersion(int size,int matrix[][],int matrixTwo[][],int resultMatrix[][]) {
+		System.out.println("Initial execution...");
 		MatrixDealer matrixDealer = new Dealer();
 		matrix  = matrixDealer.generateRandomMatrix(matrix, size);
+		System.out.println("Matrix one");
 		matrixDealer.printMatrix(matrix);
+		System.out.println("End Matrix One");
 		
+		System.out.println("Matrix Two");
 		matrixTwo = matrixDealer.generateRandomMatrix(matrixTwo, size);
 		matrixDealer.printMatrix(matrixTwo);
+		System.out.println("End Matrix Two");
 		
+		System.out.println();
+		System.out.println("Executing....");
 		resultMatrix = matrixDealer.multiplyMatrix(matrix, matrixTwo);
 		matrixDealer.printMatrix(resultMatrix);
+		System.out.println("End executing...");
+	
 	}
 	
 	
